@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pinggang Pinoy</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="bg-color">
+    <div class="top-content">
+
+      <!-- ✅ NAVBAR (NO <center>) -->
+      <div class="navbar">
+        <div class="brand">
+          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="nav-logo">
+          <span class="nav-text">Pinggang Pinoy</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links">
+          <a href="{{ url_for('index') }}">Home</a>
+          <a href="{{ url_for('menu') }}">Menu</a>
+          <a href="{{ url_for('cart') }}">Cart</a>
+          <a href="{{ url_for('account') }}">Account</a>
+          <button type="button" class="rate-btn" onclick="location.href='{{ url_for('login') }}'">
+            Log Out
+          </button>
+        </div>
+      </div>
+
+      <!-- HERO CONTENT -->
+
+      <section class="hero">
+        <div class="hero-text">
+          <h1>
+            <span class="title">Pinggang</span>
+            <span class="title">Pinoy</span>
+          </h1>
+
+          <h2>Making Healthy Eating Accessible for Every Filipino</h2>
+
+          <p class="desc">
+            Pinggang Pinoy is a nutrition-guided e-commerce platform that makes healthy Filipino meals accessible,
+            affordable, and easy to understand.
+          </p>
+        </div>
+
+        <div class="slider">
+          <div class="slides">
+            <img src="{{ url_for('static', filename='images/cbm3.png') }}" alt="Dish 1">
+            <img src="{{ url_for('static', filename='images/cbm4.png') }}" alt="Dish 2">
+            <img src="{{ url_for('static', filename='images/fbm3.png') }}" alt="Dish 3">
+            <img src="{{ url_for('static', filename='images/cbm2.png') }}" alt="Dish 4">
+            <img src="{{ url_for('static', filename='images/cbm3.png') }}" alt="Dish 5">
+            <img src="{{ url_for('static', filename='images/fbm4.png') }}" alt="Dish 6">
+          </div>
+        </div>
+
+    </div>
+
+
+    <!-- FEATURED MEALS & PLANS -->
+    <section class="featured-section">
+      <h2>Explore Our Healthy Meal Options</h2>
+      <p class="featured-desc">
+        Nutrition-guided Filipino meals and plans tailored to your needs.
+      </p>
+
+      <div class="featured-carousel">
+
+        <button class="carousel-btn prev" onclick="slideFeatured(-1)">&#10094;</button>
+        <div class="featured-track">
+
+          <a href="{{ url_for('menu') }}#pbm" class="featured-card">
+            <img src="{{ url_for('static', filename='images/pbm1.png') }}" alt="Protein Meals">
+            <h3>Protein-Based Meals</h3>
+            <span>High-protein Filipino dishes</span>
+          </a>
+
+          <a href="{{ url_for('menu') }}#cbm" class="featured-card">
+            <img src="{{ url_for('static', filename='images/cbm1.png') }}" alt="Carbohydrate Meals">
+            <h3>Carbohydrate-Based Meals</h3>
+            <span>Energy-rich & balanced carbs</span>
+          </a>
+
+          <a href="{{ url_for('menu') }}#fbm" class="featured-card">
+            <img src="{{ url_for('static', filename='images/fbm1.png') }}" alt="Fiber Meals">
+            <h3>Fiber-Based Meals</h3>
+            <span>Vegetable-packed & digestion-friendly</span>
+          </a>
+
+          <a href="{{ url_for('menu') }}#hhm" class="featured-card">
+            <img src="{{ url_for('static', filename='images/hhm1.png') }}" alt="Heart Healthy">
+            <h3>Heart-Healthy Meals</h3>
+            <span>Low-sodium & omega-rich meals</span>
+          </a>
+
+          <a href="{{ url_for('menu') }}#bfm" class="featured-card">
+            <img src="{{ url_for('static', filename='images/hf1.png') }}" alt="Balanced Plan">
+            <h3>Balanced Filipino Plan</h3>
+            <span>Pinggang Pinoy–approved meals</span>
+          </a>
+
+          <a href="{{ url_for('menu') }}#dfm" class="featured-card">
+            <img src="{{ url_for('static', filename='images/dfm1.png') }}" alt="Diabetic Plan">
+            <h3>Diabetic-Friendly Plan</h3>
+            <span>Low-glycemic & sugar-free</span>
+          </a>
+
+        </div>
+        <button class="carousel-btn next" onclick="slideFeatured(1)">&#10095;</button>
+
+      </div>
+    </section>
+
+  </div>
+
+
+
+  <!-- SECTION 2 -->
+  <div class="section-2">
+   <div class="text-block">
+      <h2>Review Your Cart</h2>
+<p>
+  Check the items you've added to your cart before proceeding to checkout.
+</p>
+
+
+      <div class="buttons">
+        <h2><a href="{{ url_for('cart') }}">Cart</a></h2>
+      </div>
+    </div>
+
+    <div class="image-block">
+      <div class="slider1">
+        <div class="slides1">
+          <img src="{{ url_for('static', filename='images/hhm1.png') }}" alt="Dish 1">
+          <img src="{{ url_for('static', filename='images/hhm2.png') }}" alt="Dish 2">
+          <img src="{{ url_for('static', filename='images/fbm1.png') }}" alt="Dish 3">
+          <img src="{{ url_for('static', filename='images/fbm2.png') }}" alt="Dish 1">
+          <img src="{{ url_for('static', filename='images/fbm2.png') }}" alt="Dish 2">
+          <img src="{{ url_for('static', filename='images/fbm2.png') }}" alt="Dish 3">
+        </div>
+      </div>
+    </div>
+
+    <div class="text-block">
+      <h2>Check Your Health Profile</h2>
+      <p>
+        Whether you’re tracking your dietary needs or updating your preferences, Pinggang Pinoy brings personalized nutrition straight to your meals. Keep your Health Profile up to date to ensure every dish matches your goals and lifestyle.
+      </p>
+
+      <div class="buttons">
+        <h2><a href="{{ url_for('health_profile') }}">Health Profile</a></h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIND SECTION -->
+
+    
+    <section class="about-section">
+    <h2>About Pinggang Pinoy</h2>
+    <p>
+      Pinggang Pinoy is a nutrition-guided e-commerce platform that makes healthy Filipino meals accessible,
+      affordable, and easy to understand. It helps Filipinos overcome challenges such as limited time,
+      access to nutritious food, and unclear dietary guidance.
+    </p>
+
+    <div class="mv-container">
+      <div class="mv-box" id="mission">
+        <h3>Our Mission</h3>
+        <p>
+          To make healthy eating accessible and affordable for Filipinos by providing nutrition-guided,
+          balanced Filipino meals through a convenient digital platform.
+        </p>
+      </div>
+
+      <div class="mv-box" id="vision">
+        <h3>Our Vision</h3>
+        <p>
+          To become a trusted digital nutrition platform that supports a healthier Philippines by helping
+          Filipinos make informed and sustainable food choices.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  
+
+
+
+   <!-- FOOTER -->
+ <div class="footer-bg">
+    <div class="footer-content1">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="logo-img">
+      <div class="icons">
+        <a href="https://facebook.com/samrenly.cruzado"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://X.com/samrenly.cruzado"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/samrenly.cruzado"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/samrenly.cruzado"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+
+
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="footer-logo-img">
+      </div>
+      <div class="footer-section">
+        <button class="footer-title">
+          About Us <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">About Us</div>
+          <div class="text"><a href="{{ url_for('index') }}">Home</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Mission</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Vision</a></div>
+          
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          Menu <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Menu</div>
+          <div class="text"><a href="{{ url_for('menu') }}">Menu</a></div>
+          <div class="text"><a href="{{ url_for('cart') }}">Cart</a></div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          More <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Account</div>
+          <div class="text"><a href="{{ url_for('account') }}">Account Profile</a></div>
+          <div class="text"><a href="{{ url_for('health_profile') }}">Health Profile</a></div>
+          <div class="text"><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></div>
+          <div class="text"><a href="{{ url_for('order_history') }}">Order History</a></div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-2">
+      <div class="icons-1">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+
+      <div class="text2">
+        <a href="#">Terms and Conditions</a>
+      </div>
+
+      <div class="text3">
+        © 2026 Pinggang Pinoy | All rights reserved.
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

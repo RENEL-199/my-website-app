@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pinggang Pinoy</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/l-style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+
+    <div class="page-wrapper slide-in-right">
+
+        <div class="main">
+            <aside>
+                <div class="aside-content">
+                    <div class="text-content">
+                        <div class="aside-text">Welcome to Pinggang Pinoy</div>
+                        <div class="aside-text1">where quality Healthy food meets exceptional service.
+                            We are committed to delivering a refined healthy experience crafted
+                            with care and passion.</div>
+                    </div>
+                </div>
+
+            </aside>
+
+
+            <div class="m-text">Pinggang Pinoy</div>
+            <div class="log-in">
+                <form method="POST" action="{{ url_for('login') }}" class="login-box">
+                    <h2>Log In</h2>
+
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    {% if error %}
+                    <p style="color: red; font-weight: bold;">{{ error }}</p>
+                    {% endif %}
+                    <button type="submit">Log In</button>
+
+                    <p class="signup-text">
+                        Don’t have an account?
+                        <span><a href="{{ url_for('signup') }}" onclick="slideToSignup(event)">Sign up</a>
+
+                        </span>
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        function slideToSignup(e) {
+            e.preventDefault();
+            const page = document.querySelector('.page-wrapper');
+            page.classList.add('slide-out-right');
+
+            setTimeout(() => {
+                window.location.href = e.target.href;
+            }, 600);
+        }
+    </script>
+</body>
+
+</html>

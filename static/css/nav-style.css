@@ -1,0 +1,230 @@
+/* ========================
+   BANNER
+======================== */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  background: linear-gradient(90deg, #2B4D3E, #2E5339);
+  color: #EAD9B7;
+  padding: 20px 100px;
+  height: 75px;
+  animation: fadeIn 1s ease;
+}
+
+.banner-text {
+  position: absolute;
+  top: 55%;
+  font-family: 'Cinzel', serif;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #EAD9B7;
+}
+
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 93%;
+  height: 3%;
+  z-index: 1000;
+  background: #1B3D2F;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-logo {
+  height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.nav-text {
+  color: #EAD9B7;
+  font-family: 'Great Vibes', cursive;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  transition: color 0.3s, border-bottom 0.3s;
+  font-family: inherit;
+}
+
+.nav-links a:hover {
+  color: #EAD9B7;
+  border-bottom: 2px solid #EAD9B7;
+}
+
+.rate-btn {
+  background: #EAD9B7;
+  border: none;
+  color: #2C2C2C;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rate-btn:hover {
+  background: #CBB48A;
+}
+
+@media (max-width: 480px) {
+
+
+
+    .cart-item-quantity {
+  display: none;
+    }
+
+    .navbar {
+      transform: none;
+      left: 0%;
+      position: absolute;
+      padding: 10px;
+      width: 100%;
+      max-width: 1200px;
+      box-sizing: border-box;
+      height: auto;
+      gap: 0.5em;
+      animation: none !important;
+      transition: none !important;
+
+    }
+
+
+
+    .nav-logo {
+      height: 38px;
+    }
+
+    .nav-text {
+      font-size: 18px;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #EAD9B7;
+      border-radius: 2px;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #1B3D2F;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      border-radius: 12px;
+    }
+
+    .nav-links.active {
+      max-height: 300px;
+      opacity: 1;
+      pointer-events: auto;
+      padding: 0.75rem 0;
+    }
+
+    .nav-links a {
+      font-size: 16px;
+      padding: 0.5rem 0;
+      text-align: center;
+    }
+
+    .banner {
+      padding: 20px;
+      height: 80px;
+    }
+
+    .banner-text {
+      font-size: 30px;
+      top: 65%;
+    }
+
+    .menu-sidebar {
+      display: none;
+
+    }
+
+    .navs-bg {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      width: 100%;
+      background-color: var(--nav-green);
+      padding: 15px 0;
+      position: sticky;
+      text-align: center;
+      justify-items: center;
+      top: 0px;
+
+    }
+
+    .navs {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      font-size: small;
+    }
+
+    .navs a {
+      font-size: 15px;
+      color: #fff;
+      text-decoration: none;
+      margin-left: 0px;
+      margin-right: 0px;
+      font-weight: 600;
+      padding-bottom: 5px;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    .navs a:hover {
+      color: #EAD9B7;
+      border-bottom: 2px solid #EAD9B7;
+    }
+}
+    

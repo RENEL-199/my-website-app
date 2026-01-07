@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pinggang Pinoy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hp-style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="banner">
+
+        <!-- ✅ NAVBAR (NO <center>) -->
+        <div class="navbar">
+            <div class="brand">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="nav-logo">
+                <span class="nav-text">Pinggang Pinoy</span>
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('menu') }}">Menu</a>
+                <a href="{{ url_for('cart') }}">Cart</a>
+                <a href="{{ url_for('account') }}">Account</a>
+                <button type="button" class="rate-btn" onclick="location.href='{{ url_for('login') }}'">
+                    Log Out
+                </button>
+
+            </div>
+        </div>
+        <div class="banner-text">
+            Health Profile
+        </div>
+
+    </div>
+    <div class="navs-bg">
+        <div class="navs">
+            <a href="{{ url_for('account') }}">Account Details</a>
+            <a href="{{ url_for('cart') }}">Cart</a>
+            <a href="{{ url_for('health_profile') }}">Health Profile</a>
+            <a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a>
+            <a href="{{ url_for('order_history') }}">Order History</a>
+        </div>
+    </div>
+
+    </div>
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <ul class="sidebar-menu">
+                <li><a href="{{ url_for('account') }}">Account Profile</a></li>
+                <li><a href="{{ url_for('cart') }}">Cart</a></li>
+                <li class="active"><a href="{{ url_for('health_profile') }}">Health Profile</a></li>
+                <li><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></li>
+                <li><a href="{{ url_for('order_history') }}">Order History</a></li>
+
+                <hr class="sidebar-separator">
+                <li class="logout"><a href="{{ url_for('login') }}">Log Out</a></li>
+            </ul>
+            <!-- Help & Support -->
+            <div class="sidebar-help">
+                <h3>Help & Support</h3>
+
+                <div class="help-item">
+                    <span class="help-icon">☏</span>
+                    <div class="help-text">
+                        <small>Call Us</small>
+                        <a href="tel:+639XXXXXXXXX">+63 9XX XXX XXXX</a>
+                    </div>
+                </div>
+
+                <div class="help-item">
+                    <span class="help-icon">✉</span>
+                    <div class="help-text">
+                        <small>Email Us</small>
+                        <a href="mailto:pinggangpinoy_support@gmail.com">
+                            pinggangpinoy_support@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+
+        <main class="content">
+
+            <div class="health-profile-card">
+
+                <h2 class="section-title">Health Profile</h2>
+
+                <!-- Nutrient Diet Type -->
+                <section class="profile-section">
+                    <h3>Nutrient Diet Type</h3>
+
+                    <div class="diet-grid">
+                        <label class="diet-card">
+                            <input type="radio" name="nutrient_diet">
+                            <div class="diet-content">
+                                <h4>Protein-Based</h4>
+                                <p>High protein focused meals</p>
+                            </div>
+                            <span class="checkmark">✓</span>
+                        </label>
+
+                        <label class="diet-card">
+                            <input type="radio" name="nutrient_diet">
+                            <div class="diet-content">
+                                <h4>Carb-Based</h4>
+                                <p>Energy-rich carbohydrate meals</p>
+                            </div>
+                            <span class="checkmark">✓</span>
+                        </label>
+
+                        <label class="diet-card">
+                            <input type="radio" name="nutrient_diet">
+                            <div class="diet-content">
+                                <h4>Fiber-Based</h4>
+                                <p>Digestive-friendly foods</p>
+                            </div>
+                            <span class="checkmark">✓</span>
+                        </label>
+
+                        <label class="diet-card">
+                            <input type="radio" name="nutrient_diet" checked>
+                            <div class="diet-content">
+                                <h4>Heart-Healthy</h4>
+                                <p>Low sodium, healthy fats</p>
+                            </div>
+                            <span class="checkmark">✓</span>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Dietary Type -->
+                <section class="profile-section">
+                    <h3>Dietary Type</h3>
+
+                    <div class="diet-grid">
+                        <label class="diet-card">
+                            <input type="radio" name="dietary_type">
+                            <div class="diet-content">
+                                <h4>Balanced Filipino</h4>
+                                <p>Traditional meals with proper portions</p>
+                            </div>
+                            <span class="checkmark">✓</span>
+                        </label>
+
+                        <label class="diet-card">
+                            <input type="radio" name="dietary_type">
+                            <div class="diet-content">
+                                <h4>Ketogenic</h4>
+                                <p>Low-carb, high-fat meals</p>
+                            </div>
+                            <span class="checkmark">✓</span>
+                        </label>
+
+                        <label class="diet-card">
+                            <input type="radio" name="dietary_type">
+                            <div class="diet-content">
+                                <h4>Low-Carb High-Protein</h4>
+                                <p>Reduced carbs, protein-focused</p>
+                            </div>
+                            <span class="checkmark">✓</span>
+                        </label>
+
+                        <label class="diet-card">
+                            <input type="radio" name="dietary_type">
+                            <div class="diet-content">
+                                <h4>Pescatarian</h4>
+                                <p>Fish and seafood based</p>
+                            </div>
+                            <span class="checkmark">✓</span>
+                        </label>
+
+                        <label class="diet-card">
+                            <input type="radio" name="dietary_type">
+                            <div class="diet-content">
+                                <h4>Diabetic-Friendly</h4>
+                                <p>Blood sugar conscious meals</p>
+                            </div>
+                            <span class="checkmark">✓</span>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Allergies -->
+                <section class="profile-section">
+                    <h3>Allergies & Restrictions</h3>
+
+                    <div class="allergy-pill-group">
+                        <label class="allergy-pill"><input type="checkbox"><span>Shellfish</span></label>
+                        <label class="allergy-pill"><input type="checkbox"><span>Peanuts</span></label>
+                        <label class="allergy-pill"><input type="checkbox"><span>Tree Nuts</span></label>
+                        <label class="allergy-pill"><input type="checkbox"><span>Dairy</span></label>
+                        <label class="allergy-pill"><input type="checkbox"><span>Eggs</span></label>
+                        <label class="allergy-pill"><input type="checkbox"><span>Soy</span></label>
+                        <label class="allergy-pill"><input type="checkbox"><span>Gluten</span></label>
+                        <label class="allergy-pill"><input type="checkbox"><span>Fish</span></label>
+                    </div>
+                </section>
+
+                <!-- SAVE BUTTON -->
+               <div class="save-section">
+    <button type="button" id="saveBtn" class="save-btn">Save Changes</button>
+</div>
+
+
+            </div>
+        </main>
+    </div>
+    </div>
+    
+   <!-- FOOTER -->
+ <div class="footer-bg">
+    <div class="footer-content1">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="logo-img">
+      <div class="icons">
+        <a href="https://facebook.com/samrenly.cruzado"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://X.com/samrenly.cruzado"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/samrenly.cruzado"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/samrenly.cruzado"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+
+
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="footer-logo-img">
+      </div>
+      <div class="footer-section">
+        <button class="footer-title">
+          About Us <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">About Us</div>
+          <div class="text"><a href="{{ url_for('index') }}">Home</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Mission</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Vision</a></div>
+          
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          Menu <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Menu</div>
+          <div class="text"><a href="{{ url_for('menu') }}">Menu</a></div>
+          <div class="text"><a href="{{ url_for('cart') }}">Cart</a></div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          More <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Account</div>
+          <div class="text"><a href="{{ url_for('account') }}">Account Profile</a></div>
+          <div class="text"><a href="{{ url_for('health_profile') }}">Health Profile</a></div>
+          <div class="text"><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></div>
+          <div class="text"><a href="{{ url_for('order_history') }}">Order History</a></div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-2">
+      <div class="icons-1">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+
+      <div class="text2">
+        <a href="#">Terms and Conditions</a>
+      </div>
+
+      <div class="text3">
+        © 2026 Pinggang Pinoy | All rights reserved.
+      </div>
+
+    </div>
+  </div>
+<script>
+document.getElementById("saveBtn").addEventListener("click", function() {
+    alert("Your changes have been saved!");
+});
+</script>
+<script src="{{ url_for('static', filename='js/function.js') }}"></script>
+</body>
+
+</html>

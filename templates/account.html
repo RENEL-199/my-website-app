@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pinggang Pinoy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/a-style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="banner">
+
+        <!-- ✅ NAVBAR (NO <center>) -->
+        <div class="navbar">
+            <div class="brand">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="nav-logo">
+                <span class="nav-text">Pinggang Pinoy</span>
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('menu') }}">Menu</a>
+                <a href="{{ url_for('cart') }}">Cart</a>
+                <a href="{{ url_for('account') }}">Account</a>
+                <button type="button" class="rate-btn" onclick="location.href='{{ url_for('login') }}'">
+                    Log Out
+                </button>
+
+            </div>
+        </div>
+        <div class="banner-text">
+            Account
+        </div>
+
+    </div>
+    <div class="navs-bg">
+        <div class="navs">
+            <a href="{{ url_for('account') }}">Account Details</a>
+            <a href="{{ url_for('cart') }}">Cart</a>
+            <a href="{{ url_for('health_profile') }}">Health Profile</a>
+            <a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a>
+            <a href="{{ url_for('order_history') }}">Order History</a>
+        </div>
+    </div>
+
+    </div>
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <ul class="sidebar-menu">
+                <li class="active"><a href="{{ url_for('account') }}">Account Profile</a></li>
+                <li><a href="{{ url_for('cart') }}">Cart</a></li>
+                <li><a href="{{ url_for('health_profile') }}">Health Profile</a></li>
+                <li><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></li>
+                <li><a href="{{ url_for('order_history') }}">Order History</a></li>
+
+                <hr class="sidebar-separator">
+                <li class="logout"><a href="{{ url_for('login') }}">Log Out</a></li>
+            </ul>
+            <!-- Help & Support -->
+            <div class="sidebar-help">
+                <h3>Help & Support</h3>
+
+                <div class="help-item">
+                    <span class="help-icon">☏</span>
+                    <div class="help-text">
+                        <small>Call Us</small>
+                        <a href="tel:+639XXXXXXXXX">+63 9XX XXX XXXX</a>
+                    </div>
+                </div>
+
+                <div class="help-item">
+                    <span class="help-icon">✉</span>
+                    <div class="help-text">
+                        <small>Email Us</small>
+                        <a href="mailto:pinggangpinoy_support@gmail.com">
+                            pinggangpinoy_support@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <main class="content" id="profile">
+            <div class="card profile-layout">
+                <form method="POST" action="{{ url_for('update_profile') }}" id="profileForm">
+
+
+                    <!-- LEFT -->
+                    <div class="profile-info">
+
+                        <!-- HEADER WITH EDIT BUTTON -->
+                        <div class="profile-header">
+                            <h2>Personal Information</h2>
+                            <button type="button" class="edit-btn floating-edit" onclick="enableEdit()">
+                                Edit Profile
+                            </button>
+
+                        </div>
+
+                        <div class="info-grid">
+                            <div>
+                                <label>First Name</label>
+                                <input type="text" name="first_name" value="{{ user.first_name or '' }}" disabled>
+                            </div>
+
+                            <div>
+                                <label>Last Name</label>
+                                <input type="text" name="last_name" value="{{ user.last_name or '' }}" disabled>
+                            </div>
+
+                            <div>
+                                <label>Email</label>
+                                <input type="email" name="email" value="{{ user.email or '' }}" disabled>
+                            </div>
+
+                            <div>
+                                <label>Phone Number</label>
+                                <input type="text" name="phone" value="{{ user.phone or '' }}" disabled>
+                            </div>
+
+                            <div>
+                                <label>Gender</label>
+                                <select name="gender" disabled>
+                                    <option value="">Select</option>
+                                    <option value="Male" {{ 'selected' if user.gender=='Male' else '' }}>Male</option>
+                                    <option value="Female" {{ 'selected' if user.gender=='Female' else '' }}>Female
+                                    </option>
+                                    <option value="Prefer not to say" {{ 'selected' if user.gender=='Prefer not to say'
+                                        else '' }}>
+                                        Prefer not to say
+                                    </option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="edit-btn" id="saveBtn" style="display:none;">
+                                Save Changes
+                            </button>
+                        </div>
+                </form>
+                <h3>Addresses</h3>
+
+                <div class="address-list">
+                    {% for addr in addresses %}
+                    <div class="address-card">
+                        <strong>{{ addr.label }}</strong>
+                        <p>{{ addr.address }}</p>
+
+                        <form method="POST" action="{{ url_for('delete_address', address_id=addr.id) }}">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </div>
+                    {% else %}
+                    <p>No saved addresses yet.</p>
+                    {% endfor %}
+                </div>
+                <form method="POST" action="{{ url_for('add_address') }}" class="add-address-form">
+                    <input type="text" name="label" placeholder="Label (Home, Work)" required>
+                    <input type="text" name="address" placeholder="Full address" required>
+                    <button type="submit">Add Address</button>
+                </form>
+
+
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="profile-card">
+                <img src="{{ profile_image_url }}" alt="Profile Picture" class="profile-pic-lg" id="profilePicPreview">
+
+
+                <h3>Account Profile</h3>
+
+                <form method="POST" action="{{ url_for('update_profile_image') }}" enctype="multipart/form-data">
+                    <input type="file" name="profile_image" id="profileImageInput" accept="image/*"
+                        style="display:none;">
+                    <button type="button" class="edit-btn"
+                        onclick="document.getElementById('profileImageInput').click();">
+                        Upload Image
+                    </button>
+                    <button type="submit" class="edit-btn" style="display:none;" id="saveImageBtn">Save Image</button>
+                </form>
+
+
+
+                <!-- PAYMENT METHODS -->
+                <div class="payment-section">
+                    <div class="payment-header">
+                        <h4>Payment Methods</h4>
+
+                    </div>
+
+                    <!-- Card -->
+                    <div class="payment-card default">
+                        <div class="payment-left">
+                            <div class="payment-icon">🚛</div>
+                            <div>
+                                <strong>Cash on Delivery</strong>
+                                <small>adress</small>
+                            </div>
+                        </div>
+                        <span class="badge">Default</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+    </div>
+    </main>
+    </div>
+    
+   <!-- FOOTER -->
+ <div class="footer-bg">
+    <div class="footer-content1">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="logo-img">
+      <div class="icons">
+        <a href="https://facebook.com/samrenly.cruzado"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://X.com/samrenly.cruzado"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/samrenly.cruzado"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/samrenly.cruzado"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+
+
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="footer-logo-img">
+      </div>
+      <div class="footer-section">
+        <button class="footer-title">
+          About Us <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">About Us</div>
+          <div class="text"><a href="{{ url_for('index') }}">Home</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Mission</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Vision</a></div>
+          
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          Menu <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Menu</div>
+          <div class="text"><a href="{{ url_for('menu') }}">Menu</a></div>
+          <div class="text"><a href="{{ url_for('cart') }}">Cart</a></div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          More <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Account</div>
+          <div class="text"><a href="{{ url_for('account') }}">Account Profile</a></div>
+          <div class="text"><a href="{{ url_for('health_profile') }}">Health Profile</a></div>
+          <div class="text"><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></div>
+          <div class="text"><a href="{{ url_for('order_history') }}">Order History</a></div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-2">
+      <div class="icons-1">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+
+      <div class="text2">
+        <a href="#">Terms and Conditions</a>
+      </div>
+
+      <div class="text3">
+        © 2026 Pinggang Pinoy | All rights reserved.
+      </div>
+
+    </div>
+  </div>
+  
+    <script>
+        function enableEdit() {
+            const inputs = document.querySelectorAll(
+                "#profileForm input, #profileForm select"
+            );
+
+            inputs.forEach(input => {
+                input.disabled = false;
+            });
+
+            document.getElementById("saveBtn").style.display = "inline-block";
+        }
+
+        const profileInput = document.getElementById('profileImageInput');
+        const profilePreview = document.getElementById('profilePicPreview');
+        const saveBtn = document.getElementById('saveImageBtn');
+
+        profileInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    profilePreview.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+                saveBtn.style.display = 'inline-block';
+            }
+        });
+    </script>
+
+    <script src="{{ url_for('static', filename='js/function.js') }}"></script>
+</body>
+
+</html>

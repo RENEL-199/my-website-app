@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pinggang Pinoy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/np-style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="banner">
+
+        <!-- ✅ NAVBAR (NO <center>) -->
+        <div class="navbar">
+            <div class="brand">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="nav-logo">
+                <span class="nav-text">Pinggang Pinoy</span>
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('menu') }}">Menu</a>
+                <a href="{{ url_for('cart') }}">Cart</a>
+                <a href="{{ url_for('account') }}">Account</a>
+                <button type="button" class="rate-btn" onclick="location.href='{{ url_for('login') }}'">
+                    Log Out
+                </button>
+
+            </div>
+        </div>
+        <div class="banner-text">
+            Nutrition Plan
+        </div>
+
+    </div>
+    <div class="navs-bg">
+        <div class="navs">
+            <a href="{{ url_for('account') }}">Account Details</a>
+            <a href="{{ url_for('cart') }}">Cart</a>
+            <a href="{{ url_for('health_profile') }}">Health Profile</a>
+            <a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a>
+            <a href="{{ url_for('order_history') }}">Order History</a>
+        </div>
+    </div>
+
+    </div>
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <ul class="sidebar-menu">
+                <li><a href="{{ url_for('account') }}">Account Profile</a></li>
+                <li><a href="{{ url_for('cart') }}">Cart</a></li>
+                <li><a href="{{ url_for('health_profile') }}">Health Profile</a></li>
+                <li class="active"><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></li>
+                <li><a href="{{ url_for('order_history') }}">Order History</a></li>
+
+                <hr class="sidebar-separator">
+                <li class="logout"><a href="{{ url_for('login') }}">Log Out</a></li>
+            </ul>
+            <!-- Help & Support -->
+            <div class="sidebar-help">
+                <h3>Help & Support</h3>
+
+                <div class="help-item">
+                    <span class="help-icon">☏</span>
+                    <div class="help-text">
+                        <small>Call Us</small>
+                        <a href="tel:+639XXXXXXXXX">+63 9XX XXX XXXX</a>
+                    </div>
+                </div>
+
+                <div class="help-item">
+                    <span class="help-icon">✉</span>
+                    <div class="help-text">
+                        <small>Email Us</small>
+                        <a href="mailto:pinggangpinoy_support@gmail.com">
+                            pinggangpinoy_support@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+<main class="content">
+
+            <!-- SUBSCRIPTION CARD -->
+            <div class="subscription-card">
+
+                <div class="sub-header">
+                    <div>
+                        <span class="status-badge">Active</span><br><br>
+                        <div class="plan-title">Balanced Filipino Weekly Plan</div>
+                        <div class="plan-sub">3 meals/day • 7 days/week</div>
+                    </div>
+
+                    <div class="price">
+                        ₱2,499<br><small>per week</small>
+                    </div>
+                </div>
+
+                <div class="progress-row">
+                    <span>Current Cycle Progress</span>
+                    <span>Week 3 of 4</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+
+                <div class="delivery-card">
+                    <div class="delivery-info">
+                        <div class="delivery-icon">📦</div>
+                        <div>
+                            <strong>Next Delivery</strong><br>
+                            January 20, 2026
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn cancel-btn">Cancel Subscription</button>
+                </div>
+
+            </div>
+
+            <!-- EXPLORE OTHER PLANS -->
+            <h3 class="explore-title">Explore Other Plans</h3>
+
+            <div class="explore-grid">
+
+                <!-- CARD 1 -->
+                <div class="plan-card">
+                    <div class="plan-top">
+                        <div class="plan-icon">📅</div>
+                        <span class="badge popular">Popular</span>
+                    </div>
+
+                    <h4 class="plan-name">Keto Weekly Plan</h4>
+                    <p class="plan-desc">
+                        Low-carb, high-fat meals for ketogenic diet
+                    </p>
+
+                    <div class="plan-footer">
+                        <span class="plan-price">₱2,799<span>/week</span></span>
+                        <span class="arrow">›</span>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="plan-card">
+                    <div class="plan-top">
+                        <div class="plan-icon">📅</div>
+                    </div>
+
+                    <h4 class="plan-name">Diabetic-Friendly Plan</h4>
+                    <p class="plan-desc">
+                        Blood sugar conscious meals with low GI foods
+                    </p>
+
+                    <div class="plan-footer">
+                        <span class="plan-price">₱2,599<span>/week</span></span>
+                        <span class="arrow">›</span>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="plan-card">
+                    <div class="plan-top">
+                        <div class="plan-icon">📅</div>
+                    </div>
+
+                    <h4 class="plan-name">Heart-Healthy Plan</h4>
+                    <p class="plan-desc">
+                        Low sodium meals with healthy fats
+                    </p>
+
+                    <div class="plan-footer">
+                        <span class="plan-price">₱2,699<span>/week</span></span>
+                        <span class="arrow">›</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+
+    </div>
+   
+   <!-- FOOTER -->
+ <div class="footer-bg">
+    <div class="footer-content1">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="logo-img">
+      <div class="icons">
+        <a href="https://facebook.com/samrenly.cruzado"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://X.com/samrenly.cruzado"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/samrenly.cruzado"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/samrenly.cruzado"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+
+
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="footer-logo-img">
+      </div>
+      <div class="footer-section">
+        <button class="footer-title">
+          About Us <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">About Us</div>
+          <div class="text"><a href="{{ url_for('index') }}">Home</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Mission</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Vision</a></div>
+          
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          Menu <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Menu</div>
+          <div class="text"><a href="{{ url_for('menu') }}">Menu</a></div>
+          <div class="text"><a href="{{ url_for('cart') }}">Cart</a></div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          More <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Account</div>
+          <div class="text"><a href="{{ url_for('account') }}">Account Profile</a></div>
+          <div class="text"><a href="{{ url_for('health_profile') }}">Health Profile</a></div>
+          <div class="text"><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></div>
+          <div class="text"><a href="{{ url_for('order_history') }}">Order History</a></div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-2">
+      <div class="icons-1">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+
+      <div class="text2">
+        <a href="#">Terms and Conditions</a>
+      </div>
+
+      <div class="text3">
+        © 2026 Pinggang Pinoy | All rights reserved.
+      </div>
+
+    </div>
+  </div>
+    </script>
+    <script src="{{ url_for('static', filename='js/function.js') }}"></script>
+</body>
+
+</html>

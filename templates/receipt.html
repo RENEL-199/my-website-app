@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Le Séquoia</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/r-style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <div class="brand">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="nav-logo">
+                <span class="nav-text">Le Séquoia</span>
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('menu') }}">Menu</a>
+                <a href="{{ url_for('cart') }}">Cart</a>
+                <a href="{{ url_for('book') }}">Book a Table</a>
+                <a href="{{ url_for('account') }}">Account</a>
+                <button type="button" class="rate-btn" onclick="location.href='{{ url_for('login') }}'">
+                    Log Out
+                </button>
+            </div>
+        </div>
+        <div class="banner-text">
+            Receipt
+        </div>
+    </div>
+
+    <main class="body">
+        <div class="receipt-container">
+            <div class="receipt-header">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Le Séquoia Logo">
+                <h1>Le Séquoia Reservation</h1>
+                <p><em>Thank you for booking with us!</em></p>
+            </div>
+
+            <div class="receipt-details">
+                <div class="detail-row"><span>Name:</span> <span>{{ name }}</span></div>
+                <div class="detail-row"><span>Gender:</span> <span>{{ gender }}</span></div>
+                <div class="detail-row"><span>Contact:</span> <span>{{ contact }}</span></div>
+                <div class="detail-row"><span>Zip Code:</span> <span>{{ zip }}</span></div>
+                <div class="detail-row"><span>Table Color:</span> <span>{{ color }}</span></div>
+                <div class="detail-row"><span>Date:</span> <span>{{ date }}</span></div>
+                <div class="detail-row"><span>Time:</span> <span>{{ time }}</span></div>
+                <div class="detail-row"><span>Number of People:</span> <span>{{ quantity }}</span></div>
+                <div class="suggestion"><span>Note:  </span><span>{{ futureWeb }}</span></div>
+            </div>
+
+            <div class="total">
+                <p>We look forward to serving you!</p>
+            </div>
+        </div>
+    </main>
+
+     
+   <!-- FOOTER -->
+ <div class="footer-bg">
+    <div class="footer-content1">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="logo-img">
+      <div class="icons">
+        <a href="https://facebook.com/samrenly.cruzado"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://X.com/samrenly.cruzado"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/samrenly.cruzado"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/samrenly.cruzado"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+
+
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="footer-logo-img">
+      </div>
+      <div class="footer-section">
+        <button class="footer-title">
+          About Us <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">About Us</div>
+          <div class="text"><a href="{{ url_for('index') }}">Home</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Mission</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Vision</a></div>
+          
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          Menu <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Menu</div>
+          <div class="text"><a href="{{ url_for('menu') }}">Menu</a></div>
+          <div class="text"><a href="{{ url_for('cart') }}">Cart</a></div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          More <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Account</div>
+          <div class="text"><a href="{{ url_for('account') }}">Account Profile</a></div>
+          <div class="text"><a href="{{ url_for('health_profile') }}">Health Profile</a></div>
+          <div class="text"><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></div>
+          <div class="text"><a href="{{ url_for('order_history') }}">Order History</a></div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-2">
+      <div class="icons-1">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+
+      <div class="text2">
+        <a href="#">Terms and Conditions</a>
+      </div>
+
+      <div class="text3">
+        © 2026 Pinggang Pinoy | All rights reserved.
+      </div>
+
+    </div>
+  </div>
+
+    <script src="{{ url_for('static', filename='js/function.js') }}"></script>
+</body>
+
+</html>

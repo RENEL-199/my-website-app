@@ -1,0 +1,153 @@
+[
+  {
+    "category": "Protein-Based Meals",
+    "items": [
+      {
+        "name": "Chicken Adobo (Lean & Low-Sodium)",
+        "description": "A heart-healthy take on the Filipino classic. Uses lean breast meat to reduce fat and low-sodium soy sauce to manage blood pressure. High in protein and rich in garlic flavor.",
+        "price": 180.00,
+        "image": "pbm1.png"
+      },
+      {
+        "name": "Grilled Bangus Belly with Ensaladang Talong",
+        "description": "Rich in Omega-3 fatty acids for heart health. This grilled milkfish belly is paired with fiber-packed eggplant and tomatoes to support healthy digestion and weight management.",
+        "price": 220.00,
+        "image": "pbm2.png"
+      },
+      {
+        "name": "Beef Tapa (Lean) with Garlic Brown Rice",
+        "description": "A high-protein breakfast or lunch option featuring top round lean beef marinated in calamansi and liquid aminos. Served with Garlic Brown Rice for steady energy and dietary fiber.",
+        "price": 210.00,
+        "image": "pbm3.png"
+      },
+      {
+        "name": "Chicken Inasal with Steamed Kangkong",
+        "description": "Skinless chicken breast marinated in lemongrass, ginger, and calamansi, grilled to perfection. Served with steamed kangkong to provide essential vitamins and minerals with zero added fat.",
+        "price": 195.00,
+        "image": "pbm4.png"
+      }
+    ]
+  },
+  {
+    "category": "Carbohydrate-Based Meals",
+    "items": [
+      {
+        "name": "Red Rice Champorado (Low Sugar)",
+        "description": "A high-fiber twist on a Filipino favorite. Made with antioxidant-rich red rice and pure cacao, sweetened with stevia or honey. Provides sustained energy without the sugar crash.",
+        "price": 120.00,
+        "image": "cbm1.png"
+      },
+      {
+        "name": "Sweet Potato & Chicken Energy Bowl",
+        "description": "Replaces white rice with roasted kamote (sweet potato) for better digestion. Served with grilled chicken strips and fresh greens for a complete, nutrient-dense meal.",
+        "price": 240.00,
+        "image": "cbm2.png"
+      },
+      {
+        "name": "Ginisang Monggo with Malunggay",
+        "description": "Packed with iron-rich Malunggay leaves and plant-based protein, served with a side of red rice for a complete amino acid profile.",
+        "price": 165.00,
+        "image": "cbm3.png"
+      },
+      {
+        "name": "Brown Rice Sinangag & Scrambled Eggs",
+        "description": "A healthier 'Silog' alternative using garlic-tossed brown rice and eggs cooked in minimal olive oil. Provides a heart-healthy start to the day with B-vitamins.",
+        "price": 145.00,
+        "image": "cbm4.png"
+      }
+    ]
+  },
+  {
+    "category": "Fiber-Based Meals",
+    "items": [
+      {
+        "name": "Pinakbet with Lean Pork",
+        "description": "A northern classic loaded with ampalaya, sitaw, and kalabasa. Lean pork loin is used instead of fatty bagnet to provide high fiber and Vitamin A while keeping calories low.",
+        "price": 185.00,
+        "image": "fbm1.png"
+      },
+      {
+        "name": "Laing with Grilled Fish",
+        "description": "Dried taro leaves simmered in light coconut milk and ginger, topped with flaked grilled white fish for Omega-3 and iron.",
+        "price": 205.00,
+        "image": "fbm2.png"
+      },
+      {
+        "name": "Gising-Gising (Low-Fat Gata)",
+        "description": "Finely chopped winged beans and chili peppers cooked in diluted coconut milk. Spicy kick boosts metabolism, beans provide high fiber.",
+        "price": 170.00,
+        "image": "fbm3.png"
+      },
+      {
+        "name": "Chopsuey with Chicken Breast",
+        "description": "A colorful stir-fry of cauliflower, carrots, and bell peppers with lean chicken breast and a light cornstarch glaze to minimize sodium and oil.",
+        "price": 190.00,
+        "image": "fbm4.png"
+      }
+    ]
+  },
+  {
+    "category": "Heart-Healthy Meals",
+    "items": [
+      {
+        "name": "Grilled Salmon with Adlai Rice",
+        "description": "Premium heart-healthy meal featuring Omega-3 rich Salmon. Served with Adlai, a gluten-free grain with a lower glycemic index than white rice.",
+        "price": 350.00,
+        "image": "hhm1.png"
+      },
+      {
+        "name": "Fish Tinola with Sayote",
+        "description": "A ginger-based soup using fresh white fish fillets, sayote, and malunggay leaves. Hydrating and easy on digestion.",
+        "price": 195.00,
+        "image": "hhm2.png"
+      },
+      {
+        "name": "Chicken Sotanghon (Low-Sodium)",
+        "description": "Bean thread noodles in a savory annatto-colored broth with shredded breast meat and low-sodium seasoning.",
+        "price": 160.00,
+        "image": "hhm3.png"
+      },
+      {
+        "name": "Pinaputok na Tilapia",
+        "description": "Tilapia stuffed with tomatoes, onions, and ginger, grilled or steamed to lock in juices. Served with steamed okra and sitaw for a fiber-rich finish.",
+        "price": 180.00,
+        "image": "hhm4.png"
+      }
+    ]
+  },
+  {
+    "category": "Subscription Plans",
+    "items": [
+      {
+        "name": "Diabetic-Friendly Subscription",
+        "description": "A comprehensive 4-meal plan featuring low-glycemic ingredients, natural insulin-boosters like ampalaya, and zero refined sugars to maintain stable blood glucose.",
+        "price": 725.00,
+        "image": "dfm1.png"
+      },
+      {
+        "name": "Ketogenic Meal Subscription",
+        "description": "High-fat, ultra-low-carb plan designed for ketosis. Rice is replaced with fiber-rich cauliflower and cabbage to maintain satiety.",
+        "price": 850.00,
+        "image": "km1.png"
+      },
+      {
+        "name": "Pescetarian Meal Subscription",
+        "description": "A nutrient-dense plan centered on fresh seafood and plant-based sides. Rich in Omega-3 fatty acids and lean proteins.",
+        "price": 780.00,
+        "image": "pm1.png"
+      },
+      {
+        "name": "Low-Carb, High-Protein Plan",
+        "description": "An athlete-focused plan designed to maximize protein intake while keeping carbohydrates minimal. Ideal for muscle recovery and metabolic health.",
+        "price": 820.00,
+        "image": "lchp1.png"
+      },
+      {
+        "name": "Balanced Filipino Subscription Plan",
+        "description": "Balanced Filipino dining following the Pinggang Pinoy concept. Features lean proteins, red rice, and fiber-filled local vegetables.",
+        "price": 760.00,
+        "image": "hf1.png"
+      }
+    ]
+  }
+]

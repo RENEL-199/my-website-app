@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pinggang Pinoy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/oh-style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="banner">
+
+        <!-- ✅ NAVBAR (NO <center>) -->
+        <div class="navbar">
+            <div class="brand">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="nav-logo">
+                <span class="nav-text">Pinggang Pinoy</span>
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('menu') }}">Menu</a>
+                <a href="{{ url_for('cart') }}">Cart</a>
+                <a href="{{ url_for('account') }}">Account</a>
+                <button type="button" class="rate-btn" onclick="location.href='{{ url_for('login') }}'">
+                    Log Out
+                </button>
+
+            </div>
+        </div>
+        <div class="banner-text">
+            Order History
+        </div>
+
+    </div>
+    <div class="navs-bg">
+        <div class="navs">
+            <a href="{{ url_for('account') }}">Account Details</a>
+            <a href="{{ url_for('cart') }}">Cart</a>
+            <a href="{{ url_for('health_profile') }}">Health Profile</a>
+            <a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a>
+            <a href="{{ url_for('order_history') }}">Order History</a>
+        </div>
+    </div>
+
+    </div>
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <ul class="sidebar-menu">
+                <li><a href="{{ url_for('account') }}">Account Profile</a></li>
+                <li><a href="{{ url_for('cart') }}">Cart</a></li>
+                <li><a href="{{ url_for('health_profile') }}">Health Profile</a></li>
+                <li ><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></li>
+                <li class="active"><a href="{{ url_for('order_history') }}">Order History</a></li>
+
+                <hr class="sidebar-separator">
+                <li class="logout"><a href="{{ url_for('login') }}">Log Out</a></li>
+            </ul>
+            <!-- Help & Support -->
+            <div class="sidebar-help">
+                <h3>Help & Support</h3>
+
+                <div class="help-item">
+                    <span class="help-icon">☏</span>
+                    <div class="help-text">
+                        <small>Call Us</small>
+                        <a href="tel:+639XXXXXXXXX">+63 9XX XXX XXXX</a>
+                    </div>
+                </div>
+
+                <div class="help-item">
+                    <span class="help-icon">✉</span>
+                    <div class="help-text">
+                        <small>Email Us</small>
+                        <a href="mailto:pinggangpinoy_support@gmail.com">
+                            pinggangpinoy_support@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+<main class="content">
+
+            <div class="order-history-card">
+
+                <div class="order-header">
+                    <h2 class="section-title">Order History</h2>
+                    <span class="order-count">4 orders</span>
+                </div>
+
+                <p class="order-subtitle">Track and manage your past orders</p>
+
+                <!-- ORDER LIST -->
+                <div class="order-list">
+
+                    <!-- Order Item -->
+                    <div class="order-item">
+                        <div class="order-icon">🛒</div>
+
+                        <div class="order-details">
+                            <div class="order-top">
+                                <span class="order-id">PP-2025-1234</span>
+                                <span class="status-badge delivered">✓ Delivered</span>
+                            </div>
+                            <p class="order-date">December 15, 2024</p>
+                            <p class="order-items">Sinigang na Baboy, Pinakbet, Ensaladang Talong</p>
+                        </div>
+
+                        <div class="order-actions">
+                            <div class="order-price">₱450</div>
+                            <div class="order-item-count">3 items</div>
+                            <div class="order-buttons">
+                                <button class="btn-reorder">↻ Reorder</button>
+                                <button class="btn-view">›</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-item">
+                        <div class="order-icon">🛒</div>
+                        <div class="order-details">
+                            <div class="order-top">
+                                <span class="order-id">PP-2025-1233</span>
+                                <span class="status-badge in-transit">🚚 In Transit</span>
+                            </div>
+                            <p class="order-date">December 14, 2024</p>
+                            <p class="order-items">Chicken Tinola, Grilled Bangus</p>
+                        </div>
+                        <div class="order-actions">
+                            <div class="order-price">₱410</div>
+                            <div class="order-item-count">2 items</div>
+                            <div class="order-buttons">
+                                <button class="btn-reorder">↻ Reorder</button>
+                                <button class="btn-view">›</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-item">
+                        <div class="order-icon">🛒</div>
+                        <div class="order-details">
+                            <div class="order-top">
+                                <span class="order-id">PP-2025-1232</span>
+                                <span class="status-badge delivered">✓ Delivered</span>
+                            </div>
+                            <p class="order-date">December 12, 2025</p>
+                            <p class="order-items">Kare-Kare, Sinigang na Hipon, Bicol Express</p>
+                        </div>
+                        <div class="order-actions">
+                            <div class="order-price">₱680</div>
+                            <div class="order-item-count">3 items</div>
+                            <div class="order-buttons">
+                                <button class="btn-reorder">↻ Reorder</button>
+                                <button class="btn-view">›</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-item">
+                        <div class="order-icon">🛒</div>
+                        <div class="order-details">
+                            <div class="order-top">
+                                <span class="order-id">PP-2025-1231</span>
+                                <span class="status-badge delivered">✓ Delivered</span>
+                            </div>
+                            <p class="order-date">December 10, 2024</p>
+                            <p class="order-items">Weekly Balanced Plan</p>
+                        </div>
+                        <div class="order-actions">
+                            <div class="order-price">₱2,499</div>
+                            <div class="order-item-count">21 items</div>
+                            <div class="order-buttons">
+                                <button class="btn-reorder">↻ Reorder</button>
+                                <button class="btn-view">›</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="load-more-section">
+                    <button class="btn-load-more">Load More Orders</button>
+                </div>
+
+            </div>
+        </main>
+
+</div>
+
+  
+   <!-- FOOTER -->
+ <div class="footer-bg">
+    <div class="footer-content1">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="logo-img">
+      <div class="icons">
+        <a href="https://facebook.com/samrenly.cruzado"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://X.com/samrenly.cruzado"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/samrenly.cruzado"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/samrenly.cruzado"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+
+
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="footer-logo-img">
+      </div>
+      <div class="footer-section">
+        <button class="footer-title">
+          About Us <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">About Us</div>
+          <div class="text"><a href="{{ url_for('index') }}">Home</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Mission</a></div>
+          <div class="text"><a href="{{ url_for('index') }}">Vision</a></div>
+          
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          Menu <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Menu</div>
+          <div class="text"><a href="{{ url_for('menu') }}">Menu</a></div>
+          <div class="text"><a href="{{ url_for('cart') }}">Cart</a></div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <button class="footer-title">
+          More <span class="arrow">&#9660;</span>
+        </button>
+        <hr>
+        <div class="footer-links">
+          <div class="text-1">Account</div>
+          <div class="text"><a href="{{ url_for('account') }}">Account Profile</a></div>
+          <div class="text"><a href="{{ url_for('health_profile') }}">Health Profile</a></div>
+          <div class="text"><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></div>
+          <div class="text"><a href="{{ url_for('order_history') }}">Order History</a></div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-2">
+      <div class="icons-1">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+
+      <div class="text2">
+        <a href="#">Terms and Conditions</a>
+      </div>
+
+      <div class="text3">
+        © 2026 Pinggang Pinoy | All rights reserved.
+      </div>
+
+    </div>
+  </div>
+    </script>
+    <script src="{{ url_for('static', filename='js/function.js') }}"></script>
+</body>
+
+</html>
