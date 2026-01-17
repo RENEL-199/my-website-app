@@ -195,6 +195,9 @@ def index():
 def menu():
     return render_template("menu.html")
 
+@app.route("/book")
+def book():
+    return render_template("book.html")
 
 @app.route("/account")
 def account():

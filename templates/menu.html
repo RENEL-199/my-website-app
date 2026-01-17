@@ -914,8 +914,6 @@
 
  </form>
  <!-- FOOTER -->
-
-   <!-- FOOTER -->
  <div class="footer-bg">
     <div class="footer-content1">
       <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="logo-img">
@@ -933,47 +931,46 @@
       <div class="footer-logo">
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="footer-logo-img">
       </div>
-      <div class="footer-section">
-        <button class="footer-title">
-          About Us <span class="arrow">&#9660;</span>
-        </button>
-        <hr>
-        <div class="footer-links">
-          <div class="text-1">About Us</div>
-          <div class="text"><a href="{{ url_for('index') }}">Home</a></div>
-          <div class="text"><a href="{{ url_for('index') }}">Mission</a></div>
-          <div class="text"><a href="{{ url_for('index') }}">Vision</a></div>
-          
-        </div>
-      </div>
+      <!-- Footer Sections with Flask Links -->
+<div class="footer-section">
+  <button class="footer-title">
+    About Us <span class="arrow">&#9660;</span>
+  </button>
+  <hr>
+  <div class="footer-links">
+    <div class="text-1">About Us</div>
+    <div class="text"><a href="{{ url_for('index') }}">Home</a></div>
+    <div class="text"><a href="{{ url_for('index') }}">Mission</a></div>
+    <div class="text"><a href="{{ url_for('index') }}">Vision</a></div>
+  </div>
+</div>
 
-      <div class="footer-section">
-        <button class="footer-title">
-          Menu <span class="arrow">&#9660;</span>
-        </button>
-        <hr>
-        <div class="footer-links">
-          <div class="text-1">Menu</div>
-          <div class="text"><a href="{{ url_for('menu') }}">Menu</a></div>
-          <div class="text"><a href="{{ url_for('cart') }}">Cart</a></div>
-        </div>
-      </div>
+<div class="footer-section">
+  <button class="footer-title">
+    Menu <span class="arrow">&#9660;</span>
+  </button>
+  <hr>
+  <div class="footer-links">
+    <div class="text-1">Menu</div>
+    <div class="text"><a href="{{ url_for('menu') }}">Menu</a></div>
+    <div class="text"><a href="{{ url_for('cart') }}">Cart</a></div>
+  </div>
+</div>
 
-      <div class="footer-section">
-        <button class="footer-title">
-          More <span class="arrow">&#9660;</span>
-        </button>
-        <hr>
-        <div class="footer-links">
-          <div class="text-1">Account</div>
-          <div class="text"><a href="{{ url_for('account') }}">Account Profile</a></div>
-          <div class="text"><a href="{{ url_for('health_profile') }}">Health Profile</a></div>
-          <div class="text"><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></div>
-          <div class="text"><a href="{{ url_for('order_history') }}">Order History</a></div>
-          
-        </div>
-      </div>
-    </div>
+<div class="footer-section">
+  <button class="footer-title">
+    More <span class="arrow">&#9660;</span>
+  </button>
+  <hr>
+  <div class="footer-links">
+    <div class="text-1">Account</div>
+    <div class="text"><a href="{{ url_for('account') }}">Account Profile</a></div>
+    <div class="text"><a href="{{ url_for('health_profile') }}">Health Profile</a></div>
+    <div class="text"><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></div>
+    <div class="text"><a href="{{ url_for('order_history') }}">Order History</a></div>
+  </div>
+</div>
+
 
     <div class="footer-2">
       <div class="icons-1">

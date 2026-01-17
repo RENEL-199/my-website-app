@@ -222,84 +222,81 @@
         </main>
     </div>
     </div>
-    
-   <!-- FOOTER -->
- <div class="footer-bg">
-    <div class="footer-content1">
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="logo-img">
-      <div class="icons">
-        <a href="https://facebook.com/samrenly.cruzado"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://X.com/samrenly.cruzado"><i class="fab fa-twitter"></i></a>
-        <a href="https://instagram.com/samrenly.cruzado"><i class="fab fa-instagram"></i></a>
-        <a href="https://linkedin.com/samrenly.cruzado"><i class="fab fa-linkedin-in"></i></a>
-      </div>
+    <div class="footer-bg">
+        <div class="footer-content1">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="logo-img">
+            <div class="icons">
+                <a href="https://facebook.com/samrenly.cruzado"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://X.com/samrenly.cruzado"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/samrenly.cruzado"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/samrenly.cruzado"><i class="fab fa-linkedin-in"></i></a>
+            </div>
 
-    </div>
-
-
-    <div class="footer-content">
-      <div class="footer-logo">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo" class="footer-logo-img">
-      </div>
-      <div class="footer-section">
-        <button class="footer-title">
-          About Us <span class="arrow">&#9660;</span>
-        </button>
-        <hr>
-        <div class="footer-links">
-          <div class="text-1">About Us</div>
-          <div class="text"><a href="{{ url_for('index') }}">Home</a></div>
-          <div class="text"><a href="{{ url_for('index') }}">Mission</a></div>
-          <div class="text"><a href="{{ url_for('index') }}">Vision</a></div>
-          
         </div>
-      </div>
 
-      <div class="footer-section">
-        <button class="footer-title">
-          Menu <span class="arrow">&#9660;</span>
-        </button>
-        <hr>
-        <div class="footer-links">
-          <div class="text-1">Menu</div>
-          <div class="text"><a href="{{ url_for('menu') }}">Menu</a></div>
-          <div class="text"><a href="{{ url_for('cart') }}">Cart</a></div>
+
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="footer logo"
+                    class="footer-logo-img">
+            </div>
+            <div class="footer-section">
+                <button class="footer-title">
+                    About Us <span class="arrow">&#9660;</span>
+                </button>
+                <hr>
+                <div class="footer-links">
+                    <div class="text-1">About Us</div>
+                    <div class="text"><a href="{{ url_for('index') }}">Home</a></div>
+                    <div class="text"><a href="{{ url_for('apply') }}">Apply</a></div>
+                    <div class="text"><a href="{{ url_for('apply') }}">Location</a></div>
+                    <div class="text"><a href="{{ url_for('account') }}">Account</a></div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <button class="footer-title">
+                    Menu <span class="arrow">&#9660;</span>
+                </button>
+                <hr>
+                <div class="footer-links">
+                    <div class="text-1">Menu</div>
+                    <div class="text"><a href="{{ url_for('menu') }}">Menu</a></div>
+                    <div class="text"><a href="{{ url_for('cart') }}">Cart</a></div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <button class="footer-title">
+                    More <span class="arrow">&#9660;</span>
+                </button>
+                <hr>
+                <div class="footer-links">
+                    <div class="text-1">More</div>
+                    <div class="text"><a href="{{ url_for('book') }}">BOOK NOW!</a></div>
+
+                </div>
+            </div>
         </div>
-      </div>
 
-      <div class="footer-section">
-        <button class="footer-title">
-          More <span class="arrow">&#9660;</span>
-        </button>
-        <hr>
-        <div class="footer-links">
-          <div class="text-1">Account</div>
-          <div class="text"><a href="{{ url_for('account') }}">Account Profile</a></div>
-          <div class="text"><a href="{{ url_for('health_profile') }}">Health Profile</a></div>
-          <div class="text"><a href="{{ url_for('nutrition_plan') }}">Nutrition Plan</a></div>
-          <div class="text"><a href="{{ url_for('order_history') }}">Order History</a></div>
-          
+        <div class="footer-2">
+            <div class="icons-1">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="https://instagram.com/samrenly.cruzado" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/samrenly.cruzado" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+
+            <div class="text2">
+                <a href="#">Terms and Conditions</a>
+            </div>
+
+            <div class="text3">
+                © 2025 Pinggang Pinoy | Crafted with passion and flavor
+            </div>
+
         </div>
-      </div>
     </div>
-
-    <div class="footer-2">
-      <div class="icons-1">
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-      </div>
-
-      <div class="text2">
-        <a href="#">Terms and Conditions</a>
-      </div>
-
-      <div class="text3">
-        © 2026 Pinggang Pinoy | All rights reserved.
-      </div>
-
-    </div>
-  </div>
 <script>
 document.getElementById("saveBtn").addEventListener("click", function() {
     alert("Your changes have been saved!");
